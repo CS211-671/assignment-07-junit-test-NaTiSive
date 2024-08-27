@@ -10,11 +10,11 @@ class StudentTest {
 
     @BeforeEach
     void init(){
-        s1 = new Student("6xxxxxxxxx","nat")
+        s1 = new Student("6xxxxxx","nat")
     }
     @Test
     void testAddScore(){
-        //Student s1 = new Student("6xxxxxxxxx","nat");
+        //Student s1 = new Student("6xxxxxx","nat");
         s1.addScore(40);
         assertEquals(40,s1.getScore());
         s1.addScore(30);
@@ -23,9 +23,16 @@ class StudentTest {
 
     @Test
     void testCalculateGrade(){
-        Student s1 = new Student("6xxxxxxxxx","nat",50);
+        //Student s1 = new Student("6xxxxxx","nat",50);
         s1.addScore(10);
-        assertEquals(50,s1.getScore());
+        assertEquals("C",s1.grade());
     }
+
+    @Test
+    void testIsID(){
+        Student s1 = new Student("612480","Ronaldo");
+        assertEquals("612480",s1.getId());
+    }
+
 
 }
